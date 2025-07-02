@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo&family=Amiri&family=Tajawal&family=El+Messiri&family=Changa&family=Lateef&family=Reem+Kufi&family=Harmattan&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>إرسال على واتساب</title>
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            resize: none;
+        }
+
+        button {
+            background-color: #25D366;
+        }
+
+        a {
+            font-size: large;
+            border-radius: 20px;
+            padding: 5px;
+            color: black;
+            border: 1 px solid;
+            background-color: #0055aa;
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body style="text-align:center; margin-top:100px; direction:rtl;">
+
+    <h2>اكتب استفسارك !</h2>
+
+    <textarea required autofocus id="message" style="width:300px; height:150px;"
+        placeholder="اكتب هنا..."></textarea><br><br>
+    <div id="loading" style="display:none; font-weight:bold; color:black; margin-bottom:10px;">جاري رفع الاستفسار</div>
+
+    <button onclick="sendWhatsApp()"
+        style="padding:10px 20px; background-color:#25D366 ; color:white; font-size:16px; border:none; border-radius:10px;">
+        إرسال على واتساب<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20px"
+            height="20px">
+    </button>
+    <br>
+    <br>
+    <div>
+        <a href="contact_us.html"> &#10145; الرجوع للقائمة السابقنة </a>
+    </div>
+
+    <script>
+        function sendWhatsApp() {
+            var message = document.getElementById("message").value.trim();
+
+            if (message === "") {
+                alert("من فضلك اكتب رسالة أولاً.");
+                return;
+            }
+
+
+            var phone = "201225599030"; // ← غيّر ده لرقمك بصيغة دولية وبدون +
+            var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>

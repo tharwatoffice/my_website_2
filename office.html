@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo&family=Amiri&family=Tajawal&family=El+Messiri&family=Changa&family=Lateef&family=Reem+Kufi&family=Harmattan&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>طلب شهادة دخل</title>
+  <style>
+    body {
+      text-align: center;
+      justify-content: center;
+      font-family: 'Amiri', serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+      direction: rtl;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    a {
+      font-size: large;
+      border-radius: 20px;
+      padding: 5px;
+      color: black;
+      border: 1 px solid;
+      background-color: #0055aa;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 style="text-align: center; font-family: 'Amiri', serif;;">طلب شهادة دخل</h1>
+
+  <form id="incomeForm">
+    <input autofocus type="text" id="name" placeholder="الاسم" required>
+    <input type="text" id="job" placeholder="الوظيفة" required>
+    <input type="text" id="income" placeholder="الدخل الشهري" required>
+    <input type="text" id="idnum" placeholder="الرقم القومي" required>
+    <input type="text" id="adress" placeholder="العنوان " required>
+    <button style="font-size:large ;" type="submit">إرسال على واتساب <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width:20 ;height: 20px;"></button>
+    <br>
+    <br>
+    <div>
+      <a href="index.html"> &#10145; الرجوع للقائمة الرئيسية </a>
+    </div>
+
+  </form>
+
+  <script>
+    document.getElementById('incomeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name = document.getElementById('name').value;
+      var job = document.getElementById('job').value;
+      var income = document.getElementById('income').value;
+      var idnum = document.getElementById('idnum').value;
+      var adress = document.getElementById('adress').value;
+
+      var message =
+        "طلب شهادة دخل:%0A" +
+        "الاسم: " + name + "%0A" +
+        "%0A" +
+        "الوظيفة: " + job + "%0A" +
+        "%0A" +
+        "الدخل الشهري: " + income + "%0A" +
+        "%0A" +
+        " الرقم القومي: " + idnum + "%0A" +
+        "%0A" +
+        "العنوان :" + adress + "%0A";
+
+      // غير الرقم ده لرقمك أنت (بالصيغة الدولية بدون "+" – مثال: 201234567890)
+      var phoneNumber = "201225599030";
+
+      var url = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+      window.open(url, '_blank');
+    });
+  </script>
+
+</body>
+
+</html>
