@@ -1,0 +1,18 @@
+body{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+overflow-x: hidden;
+}
+.homa{
+    max-width: 600px;
+padding: 0 16px;
+margin: auto;
+}
+textarea{
+    width: 100%;
+    max-width: 100%;
+height: 150px;
+font-size: 1.2rem;
+
+}
